@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 pafs"
+
         android:textColor="#5FD813"
         android:id="@+id/pafs" />
     <TextView
@@ -30,7 +30,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="36 flops"
+
         android:textColor="#E89402"
         android:id="@+id/flops"
         />

@@ -18,10 +18,12 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     List<Button> buttons = new ArrayList<>();
     int positionLapin ;
+    int nbrPaf = 0;
+    int nbrFlop = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         //pour acceder a un bouton
@@ -34,16 +36,27 @@ public class MainActivity extends AppCompatActivity {
                     reagirClic(view);
         }
         );
+        //activer le onclickListener de chaque bouton
+        for(Button b : buttons){
+            b.setOnClickListener(view -> {
+                reagirClic(view);
+            });
+        }
 
     }
 
     private void reagirClic(View view) {
         Button boutonLapin = buttons.get(positionLapin);
         if(view == boutonLapin){
+            nbrPaf++;
             Log.i("TAPELAPIN","Bravo !");
+            binding.pafs.setText(nbrPaf + " pafs");
+            bougeLeLapin();
         }
         else {
+            nbrFlop++;
             Log.i("TAPELAPIN","Bravo'nt !");
+            binding.flops.setText(nbrFlop + " flops");
         }
         int a=0;
     }
