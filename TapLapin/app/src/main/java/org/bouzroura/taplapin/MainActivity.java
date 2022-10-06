@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         }
         int a=0;
     }
-
+//    hehehe
     private void bougeLeLapin() {
         //remplir les boutons
         for (Button button : buttons){
